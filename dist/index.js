@@ -7991,7 +7991,7 @@ async function run() {
     // e.g., https://circleci.com/gh/mne-tools/mne-python/53315
     // e.g., https://circleci.com/gh/scientific-python/circleci-artifacts-redirector-action/94?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link
     // Set the new status
-    const parts = payload.target_url.split('?')[0].split('/')
+    const target = payload.target_url.split('?')[0];   // strip any ?utm=…
 
     if (target.includes('/pipelines/circleci/')) {
       // ───── New GitHub‑App URL ───────────────────────────────────────────
